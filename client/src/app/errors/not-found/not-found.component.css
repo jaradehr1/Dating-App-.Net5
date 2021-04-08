@@ -1,0 +1,354 @@
+body {
+  background: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.hit-area {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  background: #000;
+}
+
+.hitbox {
+  width: 100px;
+  height: 100px;
+  float:left;
+}
+
+.eye {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  left: 25%;
+  top: 40%;
+  background-color: white;
+  pointer-events: none;
+}
+
+.eye + .eye {
+  left: 55%;
+}
+
+.pupil {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: black;
+  left: 50%;
+  top: 50%;
+  margin-left: -10px;
+  margin-top: -10px;
+  transition: all .5s ease;
+}
+
+.eyelid {
+  width: 150px;
+  height: 100px;
+  background-color: black;
+  position: absolute;
+  left: 20%;
+  top: 25%;
+  pointer-events: none;
+  -webkit-animation-name: blink;
+  -webkit-animation-duration: 4.5s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-delay: 1s;
+  -webkit-transition: all .5s ease;
+
+  -moz-animation-name: blink;
+  -moz-animation-duration: 4.5s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -moz-animation-direction: alternate;
+  -moz-animation-delay: 1s;
+  -moz-transition: all .5s ease;
+
+  -ms-animation-name: blink;
+  -ms-animation-duration: 4.5s;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+  -ms-animation-direction: alternate;
+  -ms-animation-delay: 1s;
+  -ms-transition: all .5s ease;
+
+  animation-name: blink;
+  animation-duration: 4.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  animation-delay: 1s;
+  transition: all .5s ease;
+}
+
+.eyelid + .eyelid {
+  left: 50%;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    top: 25%;
+  }
+  95% {
+    top: 25%;
+  }
+  100% {
+    top: 40%;
+  }
+}
+
+@-moz-keyframes blink {
+  0% {
+    top: 25%;
+  }
+  95% {
+    top: 25%;
+  }
+  100% {
+    top: 40%;
+  }
+}
+
+@-ms-keyframes blink {
+  0% {
+    top: 25%;
+  }
+  95% {
+    top: 25%;
+  }
+  100% {
+    top: 40%;
+  }
+}
+
+@keyframes blink {
+  0% {
+    top: 25%;
+  }
+  95% {
+    top: 25%;
+  }
+  100% {
+    top: 40%;
+  }
+}
+
+.hitbox:hover ~ .eyelid {
+  -webkit-transform: rotate(-10deg);
+  -moz-transform: rotate(-10deg);
+  -ms-transform: rotate(-10deg);
+  transform: rotate(-10deg);
+}
+
+.hitbox:hover ~ .eyelid:nth-of-type(2n+1) {
+  -webkit-transform: rotate(10deg);
+  -moz-transform: rotate(10deg);
+  -ms-transform: rotate(10deg);
+  transform: rotate(10deg);
+}
+
+#c-3:hover ~ .eyelid {
+  -webkit-transform:  rotate(15deg);
+  -moz-transform:  rotate(15deg);
+  -ms-transform:  rotate(15deg);
+  transform:  rotate(15deg);
+}
+
+#c-3:hover ~ .eyelid:nth-of-type(2n+1) {
+  -webkit-transform: rotate(-15deg);
+  -moz-transform: rotate(-15deg);
+  -ms-transform: rotate(-15deg);
+  transform: rotate(-15deg);
+}
+
+#c-3:hover ~ .eye .pupil {
+  background-color: red;
+}
+
+#a-1:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(60deg) translate(-30px);
+  -moz-transform: rotate(60deg) translate(-30px);
+  -ms-transform: rotate(60deg) translate(-30px);
+  transform: rotate(60deg) translate(-30px);
+}
+
+#a-2:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(80deg) translate(-30px);
+  -moz-transform: rotate(80deg) translate(-30px);
+  -ms-transform: rotate(80deg) translate(-30px);
+  transform: rotate(80deg) translate(-30px);
+}
+
+#a-3:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(90deg) translate(-30px);
+  -moz-transform: rotate(90deg) translate(-30px);
+  -ms-transform: rotate(90deg) translate(-30px);
+  transform: rotate(90deg) translate(-30px);
+}
+
+#a-4:hover ~.eye > .pupil {
+  -webkit-transform: rotate(100deg) translate(-30px);
+  -moz-transform: rotate(100deg) translate(-30px);
+  -ms-transform: rotate(100deg) translate(-30px);
+  transform: rotate(100deg) translate(-30px);
+}
+
+#a-5:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(120deg) translate(-30px);
+  -moz-transform: rotate(120deg) translate(-30px);
+  -ms-transform: rotate(120deg) translate(-30px);
+  transform: rotate(120deg) translate(-30px);
+}
+
+#b-1:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(50deg) translate(-25px);
+  -moz-transform: rotate(50deg) translate(-25px);
+  -ms-transform: rotate(50deg) translate(-25px);
+  transform: rotate(50deg) translate(-25px);
+}
+
+#b-2:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(70deg) translate(-25px);
+  -moz-transform: rotate(70deg) translate(-25px);
+  -ms-transform: rotate(70deg) translate(-25px);
+  transform: rotate(70deg) translate(-25px);
+}
+
+#b-3:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(90deg) translate(-25px);
+  -moz-transform: rotate(90deg) translate(-25px);
+  -ms-transform: rotate(90deg) translate(-25px);
+  transform: rotate(90deg) translate(-25px);
+}
+
+#b-4:hover ~.eye > .pupil {
+  -webkit-transform: rotate(110deg) translate(-25px);
+  -moz-transform: rotate(110deg) translate(-25px);
+  -ms-transform: rotate(110deg) translate(-25px);
+  transform: rotate(110deg) translate(-25px);
+}
+
+#b-5:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(130deg) translate(-25px);
+  -moz-transform: rotate(130deg) translate(-25px);
+  -ms-transform: rotate(130deg) translate(-25px);
+  transform: rotate(130deg) translate(-25px);
+}
+
+#c-1:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(0deg) translate(-25px);
+  -moz-transform: rotate(0deg) translate(-25px);
+  -ms-transform: rotate(0deg) translate(-25px);
+  transform: rotate(0deg) translate(-25px);
+}
+
+#c-2:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(0deg) translate(-10px);
+  -moz-transform: rotate(0deg) translate(-10px);
+  -ms-transform: rotate(0deg) translate(-10px);
+  transform: rotate(0deg) translate(-10px);
+}
+
+#c-3:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(0deg) translate(20px);
+  -moz-transform: rotate(0deg) translate(20px);
+  -ms-transform: rotate(0deg) translate(20px);
+  transform: rotate(0deg) translate(20px);
+}
+
+#c-3:hover ~ .eye:nth-of-type(2n+1) > .pupil {
+  -webkit-transform: rotate(0deg) translate(-20px);
+  -moz-transform: rotate(0deg) translate(-20px);
+  -ms-transform: rotate(0deg) translate(-20px);
+  transform: rotate(0deg) translate(-20px);
+}
+
+#c-4:hover ~.eye > .pupil {
+  -webkit-transform: rotate(0deg) translate(10px);
+  -moz-transform: rotate(0deg) translate(10px);
+  -ms-transform: rotate(0deg) translate(10px);
+  transform: rotate(0deg) translate(10px);
+}
+
+#c-5:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(0deg) translate(25px);
+  -moz-transform: rotate(0deg) translate(25px);
+  -ms-transform: rotate(0deg) translate(25px);
+  transform: rotate(0deg) translate(25px);
+}
+
+#d-1:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(-50deg) translate(-25px);
+  -moz-transform: rotate(-50deg) translate(-25px);
+  -ms-transform: rotate(-50deg) translate(-25px);
+  transform: rotate(-50deg) translate(-25px);
+}
+
+#d-2:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(-70deg) translate(-25px);
+  -moz-transform: rotate(-70deg) translate(-25px);
+  -ms-transform: rotate(-70deg) translate(-25px);
+  transform: rotate(-70deg) translate(-25px);
+}
+
+#d-3:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(-90deg) translate(-25px);
+  -moz-transform: rotate(-90deg) translate(-25px);
+  -ms-transform: rotate(-90deg) translate(-25px);
+  transform: rotate(-90deg) translate(-25px);
+}
+
+#d-4:hover ~.eye > .pupil {
+  -webkit-transform: rotate(-110deg) translate(-25px);
+  -moz-transform: rotate(-110deg) translate(-25px);
+  -ms-transform: rotate(-110deg) translate(-25px);
+  transform: rotate(-110deg) translate(-25px);
+}
+
+#d-5:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(-130deg) translate(-25px);
+  -moz-transform: rotate(-130deg) translate(-25px);
+  -ms-transform: rotate(-130deg) translate(-25px);
+  transform: rotate(-130deg) translate(-25px);
+}
+
+#e-1:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(-40deg) translate(-30px);
+  -moz-transform: rotate(-40deg) translate(-30px);
+  -ms-transform: rotate(-40deg) translate(-30px);
+  transform: rotate(-40deg) translate(-30px);
+}
+
+#e-2:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(-60deg) translate(-30px);
+  -moz-transform: rotate(-60deg) translate(-30px);
+  -ms-transform: rotate(-60deg) translate(-30px);
+  transform: rotate(-60deg) translate(-30px);
+}
+
+#e-3:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(-80deg) translate(-30px);
+  -moz-transform: rotate(-80deg) translate(-30px);
+  -ms-transform: rotate(-80deg) translate(-30px);
+  transform: rotate(-80deg) translate(-30px);
+}
+
+#e-4:hover ~.eye > .pupil {
+  -webkit-transform: rotate(-100deg) translate(-30px);
+  -moz-transform: rotate(-100deg) translate(-30px);
+  -ms-transform: rotate(-100deg) translate(-30px);
+  transform: rotate(-100deg) translate(-30px);
+}
+
+#e-5:hover ~ .eye > .pupil {
+  -webkit-transform: rotate(-120deg) translate(-30px);
+  -moz-transform: rotate(-120deg) translate(-30px);
+  -ms-transform: rotate(-120deg) translate(-30px);
+  transform: rotate(-120deg) translate(-30px);
+}
