@@ -20,6 +20,9 @@ import { MemberListComponent } from './members/member-list/member-list.component
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { LoadingInterceptor } from './_interceptors/loading.interceptor';
 
 
 @NgModule({
@@ -33,6 +36,7 @@ import { JwtInterceptor } from './_interceptors/jwt.interceptor';
     MemberDetailComponent,
     MessagesComponent,
     MemberCardComponent,
+    MemberEditComponent,
     TestErrorsComponent,
     NotFoundComponent,
     ServerErrorComponent,
@@ -44,10 +48,12 @@ import { JwtInterceptor } from './_interceptors/jwt.interceptor';
     FormsModule,
     AppRoutingModule,
     SharedModule,
+    NgxSpinnerModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })
