@@ -14,6 +14,9 @@ export class MemberDetailComponent implements OnInit {
   gallaryImages: any;
   myInterval = 0;
   activeSlideIndex = 0;
+  itemsPerSlide = 3;
+  singleSlideOffset = false;
+  noWrap = false;
 
   constructor(
     private memberService: MembersService,

@@ -82,7 +82,7 @@
 
           </tab>
           <tab heading="Edit Photos">
-            <!-- <app-photo-editor [photos]="user.photos" (getMemberPhotoChange)="updateMainPhoto($event)"></app-photo-editor> -->
+            <app-photo-editor [member]="member" (getMemberPhotoChange)="updateMainPhoto($event)"></app-photo-editor>
           </tab>
         </tabset>
       </div>

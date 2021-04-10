@@ -50,7 +50,10 @@ export class MemberEditComponent implements OnInit {
     this.memberService.updateMember(this.member).subscribe(() => {
       this.toastr.success('Profile updated successfully!');
       this.editFrom.reset(this.member);
-    })
+    });
+  }
+
+  updateMainPhoto(event: any) {
 
   }
 
