@@ -35,4 +35,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - ngx-bootstrap (https://valor-software.com/ngx-bootstrap/#/)
 - ngx-spinner (https://www.npmjs.com/package/ngx-spinner)
 - ng2-file-upload (https://valor-software.com/ng2-file-upload/)
+- ngx-timeago (https://www.npmjs.com/package/ngx-timeago)
 
