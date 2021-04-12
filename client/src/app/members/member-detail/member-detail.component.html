@@ -1,4 +1,4 @@
-<div class="container mt-3" *ngIf="member">
+<div class="container mt-3" >
   <div class="row">
     <div class="col-4">
       <h1>Known as: {{member.knownAs}}</h1>
@@ -37,17 +37,17 @@
     <div class="col-8">
       <div class="tab-panel">
         <tabset class="member-tabset" #memberTabs>
-          <tab heading="About {{member.knownAs}}">
+          <tab heading="About {{member.knownAs}}" (selectTab)="onTabActivated($event)">
             <h4>Description</h4>
             <p>{{member.introduction || 'No Description provided'}}</p>
             <h4>Looking For</h4>
             <p>{{member.lookingFor || 'No details provided'}}</p>
           </tab>
-          <tab heading="Interests">
+          <tab heading="Interests" (selectTab)="onTabActivated($event)">
             <h4>Interests</h4>
             <p>{{member.interests || 'No interests provided'}}</p>
           </tab>
-          <tab heading="Photos">
+          <tab heading="Photos" (selectTab)="onTabActivated($event)">
             <carousel
               [isAnimated]="true"
               [interval]="myInterval"
@@ -60,8 +60,8 @@
               </slide>
             </carousel>
           </tab>
-          <tab heading="Messages">
-            <!-- <app-member-messages [recipientId]="member.id"></app-member-messages> -->
+          <tab heading="Messages" (selectTab)="onTabActivated($event)">
+            <app-member-messages [messages]="messages" [username]="member.username"></app-member-messages>
           </tab>
         </tabset>
       </div>

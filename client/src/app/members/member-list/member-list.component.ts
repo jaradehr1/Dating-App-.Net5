@@ -18,6 +18,8 @@ export class MemberListComponent implements OnInit {
   members: Member[];
   pagination: Pagination;
   userParams: UserParams;
+  pageNumber = 1;
+  pageSize = 5;
   user: User;
   genderList = [{value: 'male', display: 'Males'}, {value: 'female', display: 'Females'}];
 
