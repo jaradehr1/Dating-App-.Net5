@@ -18,7 +18,6 @@ namespace API.Data.Migrations
                     RecipientId = table.Column<int>(type: "int", nullable: false),
                     RecipientUsername = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Content = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    IsRead = table.Column<bool>(type: "bit", nullable: false),
                     DateRead = table.Column<DateTime>(type: "datetime2", nullable: true),
                     MessageSent = table.Column<DateTime>(type: "datetime2", nullable: false),
                     SenderDeleted = table.Column<bool>(type: "bit", nullable: false),

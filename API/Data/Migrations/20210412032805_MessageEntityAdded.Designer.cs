@@ -85,9 +85,6 @@ namespace API.Data.Migrations
                     b.Property<DateTime?>("DateRead")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("IsRead")
-                        .HasColumnType("bit");
-
                     b.Property<DateTime>("MessageSent")
                         .HasColumnType("datetime2");
 

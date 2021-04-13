@@ -13,7 +13,6 @@ namespace API.DTOs
         public string RecipientUsername { get; set; }
         public string RecipientPhotoUrl { get; set; }
         public string Content { get; set; }
-        public bool IsRead { get; set; }
         public DateTime? DateRead { get; set; }
         public DateTime MessageSent { get; set; }
     }
