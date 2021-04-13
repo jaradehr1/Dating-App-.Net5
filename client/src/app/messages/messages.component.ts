@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Message } from '../_models/message';
 import { Pagination } from '../_models/pagination';
+import { ConfirmService } from '../_services/confirm.service';
 import { MessageService } from '../_services/message.service';
 
 @Component({
@@ -22,6 +23,7 @@ export class MessagesComponent implements OnInit {
   constructor(
     private messageService: MessageService,
     private toastr: ToastrService,
+    private confirmService: ConfirmService
   ) { }
 
   ngOnInit() {
@@ -43,10 +45,15 @@ export class MessagesComponent implements OnInit {
   }
 
   deleteMessage(id: number) {
-    this.messageService.deleteMessage(id).subscribe(() => {
-      this.messages.splice(this.messages.findIndex(m => m.id === id), 1);
-      this.toastr.success('Message has been deleted successfully!')
-    });
+    this.confirmService.confirm('Confirm delete message', 'Deleted messages cannot be retrieved!').subscribe(result => {
+      if(result) {
+        this.messageService.deleteMessage(id).subscribe(() => {
+          this.messages.splice(this.messages.findIndex(m => m.id === id), 1);
+          this.toastr.success('Message has been deleted successfully!')
+        });
+      }
+    })
+
   }
 
 }
